@@ -1,0 +1,1526 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta
+      http-equiv="Referrer-Policy"
+      content="strict-origin-when-cross-origin"
+    />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="geolocation=(), microphone=(), camera=()"
+    />
+    <!-- ============================================================
+       👉 MODIFIE LE TITRE DE L'ONGLET ICI
+  ============================================================ -->
+    <title>Aura DZ — Huile d'Olive Premium</title>
+
+    <!-- ============================================================
+       PIXEL FACEBOOK
+       👉 Remplace  par ton vrai Pixel ID (2 endroits)
+  ============================================================ -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js",
+      );
+      fbq("init", "951225980600834"); // 👉 TON PIXEL ID ICI
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=951225980600834&ev=PageView&noscript=1"
+      />
+    </noscript>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --gold: #e8b84b;
+        --gold-2: #f7d070;
+        --gold-dim: rgba(232, 184, 75, 0.12);
+        --blue: #4e7cff;
+        --blue-2: #6b9fff;
+        --green: #3ecf8e;
+        --red: #e05555;
+        --dark: #07070e;
+        --card: #0f0f1a;
+        --card-2: #161625;
+        --card-3: #1c1c2e;
+        --inp: #1a1a2c;
+        --border: rgba(232, 184, 75, 0.18);
+        --bsoft: rgba(255, 255, 255, 0.07);
+        --text: #f0ede8;
+        --muted: #6a6680;
+        --r: 12px;
+        --r2: 18px;
+        --r3: 24px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--dark);
+        color: var(--text);
+        font-family: "Nunito", sans-serif;
+        min-height: 100vh;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        background:
+          radial-gradient(
+            ellipse 90% 55% at 5% 0%,
+            rgba(78, 124, 255, 0.08) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            ellipse 70% 65% at 95% 100%,
+            rgba(232, 184, 75, 0.07) 0%,
+            transparent 55%
+          );
+      }
+
+      /* HEADER */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(7, 7, 14, 0.92);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border-bottom: 1px solid var(--bsoft);
+        padding: 10px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+      }
+      /* ============================================================
+       👉 LOGO — logo.png dans le même dossier que index.html
+    ============================================================ */
+      .logo img {
+        height: 34px;
+        width: 34px;
+        object-fit: contain;
+        border-radius: 7px;
+      }
+      .logo-name {
+        font-family: "Syne", sans-serif;
+        font-size: 17px;
+        font-weight: 800;
+        color: #fff;
+      }
+      .logo-name span {
+        color: var(--blue-2);
+      }
+
+      .hdr-right {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .hdr-orders {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(62, 207, 142, 0.1);
+        border: 1px solid rgba(62, 207, 142, 0.2);
+        border-radius: 100px;
+        padding: 4px 10px;
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--green);
+      }
+      .hdr-orders::before {
+        content: "";
+        width: 5px;
+        height: 5px;
+        background: var(--green);
+        border-radius: 50%;
+        animation: blink 1.8s infinite;
+      }
+      .hdr-secure {
+        font-size: 11px;
+        color: var(--muted);
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.3;
+        }
+      }
+
+      /* LAYOUT */
+      .wrap {
+        position: relative;
+        z-index: 1;
+        max-width: 500px;
+        margin: 0 auto;
+        padding-bottom: 60px;
+      }
+
+      @media (min-width: 960px) {
+        .wrap {
+          max-width: 1100px;
+          display: grid;
+          grid-template-columns: 1.05fr 0.95fr;
+          gap: 56px;
+          padding: 52px 44px 72px;
+          align-items: start;
+        }
+      }
+
+      /* COLONNE PRODUIT */
+      .product-col {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* ============================================================
+       👉 PHOTO — modifie src de <img id="productImg"> dans le HTML
+    ============================================================ */
+      .img-wrap {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1/1;
+        overflow: hidden;
+        background: var(--card);
+      }
+
+      @media (min-width: 960px) {
+        .img-wrap {
+          border-radius: var(--r3);
+          border: 1px solid var(--border);
+        }
+      }
+
+      .img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+      .img-wrap:hover img {
+        transform: scale(1.04);
+      }
+      .img-wrap::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(
+          to bottom,
+          transparent 40%,
+          rgba(7, 7, 14, 0.82) 100%
+        );
+      }
+
+      .img-overlay {
+        position: absolute;
+        bottom: 16px;
+        left: 16px;
+        right: 16px;
+        z-index: 2;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 8px;
+      }
+
+      .badge-premium {
+        background: linear-gradient(135deg, var(--gold), var(--gold-2));
+        color: #07070e;
+        font-family: "Syne", sans-serif;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 5px 13px;
+        border-radius: 100px;
+      }
+
+      .badge-live {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        background: rgba(7, 7, 14, 0.8);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(62, 207, 142, 0.3);
+        color: var(--green);
+        font-size: 11px;
+        font-weight: 700;
+        padding: 5px 11px;
+        border-radius: 100px;
+      }
+      .badge-live::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        background: var(--green);
+        border-radius: 50%;
+        animation: blink 1.8s infinite;
+      }
+
+      .product-info {
+        padding: 20px 18px 0;
+      }
+      @media (min-width: 960px) {
+        .product-info {
+          padding: 24px 0 0;
+        }
+      }
+
+      .eyebrow {
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+      .eyebrow::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(90deg, var(--border), transparent);
+      }
+
+      /* ============================================================
+       👉 NOM DU PRODUIT — modifie le texte de <h1>
+    ============================================================ */
+      h1 {
+        font-family: "Syne", sans-serif;
+        font-size: clamp(26px, 6vw, 42px);
+        font-weight: 800;
+        line-height: 1.12;
+        margin-bottom: 12px;
+      }
+      h1 em {
+        color: var(--gold);
+        font-style: normal;
+      }
+
+      /* ============================================================
+       👉 DESCRIPTION — modifie <p class="desc">
+    ============================================================ */
+      .desc {
+        font-size: 14px;
+        line-height: 1.8;
+        color: var(--muted);
+        margin-bottom: 16px;
+      }
+
+      /* ============================================================
+       👉 PILLS — modifie les .pill
+    ============================================================ */
+      .pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-bottom: 18px;
+      }
+      .pill {
+        background: var(--card-2);
+        border: 1px solid var(--bsoft);
+        border-radius: 100px;
+        padding: 5px 12px;
+        font-size: 12px;
+        color: var(--muted);
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .reviews {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 16px;
+        background: var(--card-2);
+        border: 1px solid var(--bsoft);
+        border-radius: var(--r2);
+      }
+      .stars {
+        color: var(--gold);
+        font-size: 13px;
+        letter-spacing: 1px;
+      }
+      .reviews-txt {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .reviews-txt strong {
+        color: var(--text);
+      }
+
+      .urgency {
+        margin: 12px 18px 0;
+        padding: 10px 14px;
+        background: rgba(232, 184, 75, 0.07);
+        border: 1px solid var(--border);
+        border-radius: var(--r);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--gold);
+      }
+      @media (min-width: 960px) {
+        .urgency {
+          margin: 12px 0 0;
+        }
+      }
+      .urgency-icon {
+        font-size: 16px;
+        animation: shake 2.5s infinite;
+      }
+      @keyframes shake {
+        0%,
+        90%,
+        100% {
+          transform: rotate(0);
+        }
+        92% {
+          transform: rotate(-10deg);
+        }
+        96% {
+          transform: rotate(10deg);
+        }
+      }
+
+      /* COLONNE FORMULAIRE */
+      .form-col {
+        padding: 0;
+      }
+      @media (min-width: 960px) {
+        .form-col {
+          position: sticky;
+          top: 66px;
+        }
+      }
+
+      .form-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--r3);
+        overflow: hidden;
+        position: relative;
+        margin: 18px 18px 0;
+      }
+      @media (min-width: 960px) {
+        .form-card {
+          margin: 0;
+        }
+      }
+
+      .form-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          var(--blue) 30%,
+          var(--gold) 70%,
+          transparent 100%
+        );
+      }
+
+      .form-inner {
+        padding: 24px 20px 28px;
+      }
+
+      .section-label {
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 12px;
+      }
+
+      /* ══════════════════════════════════════════
+       PACKS PRICING
+    ══════════════════════════════════════════ */
+      /* ============================================================
+       👉 PRIX — modifie dans const PACKS dans le <script>
+    ============================================================ */
+      .packs-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 9px;
+        margin-bottom: 14px;
+      }
+
+      .pack-card {
+        position: relative;
+        background: var(--card-2);
+        border: 2px solid var(--bsoft);
+        border-radius: var(--r2);
+        padding: 18px 6px 14px;
+        cursor: pointer;
+        text-align: center;
+        transition: all 0.2s ease;
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
+        overflow: hidden;
+      }
+
+      .pack-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle at 50% 0%,
+          rgba(232, 184, 75, 0.09),
+          transparent 70%
+        );
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .pack-card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(232, 184, 75, 0.35);
+      }
+      .pack-card:hover::before {
+        opacity: 1;
+      }
+
+      .pack-card.selected {
+        border-color: var(--gold);
+        background: var(--card-3);
+        box-shadow:
+          0 0 0 3px rgba(232, 184, 75, 0.14),
+          0 8px 24px rgba(0, 0, 0, 0.4);
+        transform: translateY(-3px);
+      }
+      .pack-card.selected::before {
+        opacity: 1;
+      }
+
+      .pack-card.popular.selected {
+        border-color: var(--blue);
+        background: rgba(78, 124, 255, 0.08);
+        box-shadow:
+          0 0 0 3px rgba(78, 124, 255, 0.16),
+          0 8px 24px rgba(0, 0, 0, 0.4);
+      }
+
+      .pack-tag {
+        position: absolute;
+        top: -1px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 8px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        padding: 3px 10px;
+        border-radius: 0 0 8px 8px;
+        white-space: nowrap;
+        line-height: 1.6;
+      }
+      .pack-tag.blue {
+        background: var(--blue);
+        color: #fff;
+      }
+      .pack-tag.green {
+        background: var(--green);
+        color: #07070e;
+      }
+
+      .pack-qty {
+        font-family: "Playfair Display", sans-serif;
+        font-size: 28px;
+        font-weight: 800;
+        color: var(--text);
+        line-height: 1;
+        margin-bottom: 2px;
+      }
+
+      .pack-unit {
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+
+      .pack-old {
+        font-size: 11px;
+        color: var(--muted);
+        text-decoration: line-through;
+        margin-bottom: 2px;
+        min-height: 16px;
+      }
+
+      .pack-price {
+        font-family: "Playfair Display", sans-serif;
+        font-size: 14px;
+        font-weight: 800;
+        color: var(--gold);
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+      .pack-card.popular .pack-price {
+        color: var(--blue-2);
+      }
+
+      .pack-save {
+        font-size: 9px;
+        font-weight: 800;
+        color: var(--green);
+        background: rgba(62, 207, 142, 0.12);
+        border-radius: 100px;
+        padding: 2px 7px;
+        display: inline-block;
+        min-height: 14px;
+      }
+
+      /* RÉCAP */
+      .recap {
+        background: var(--card-3);
+        border: 1px solid var(--bsoft);
+        border-radius: var(--r);
+        padding: 13px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 18px;
+        transition: all 0.3s ease;
+      }
+      .recap-left {
+        font-size: 13px;
+        color: var(--muted);
+        font-weight: 600;
+      }
+      .recap-left span {
+        color: var(--text);
+        font-weight: 700;
+      }
+      .recap-right {
+        text-align: right;
+      }
+      .recap-total {
+        font-family: "Playfair Display", sans-serif;
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--gold);
+        line-height: 1;
+      }
+      .recap-saving {
+        font-size: 11px;
+        color: var(--green);
+        font-weight: 700;
+        margin-top: 2px;
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--bsoft);
+        margin: 4px 0 18px;
+      }
+
+      /* CHAMPS */
+      .fields {
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+      }
+      .row-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      label {
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      input,
+      select {
+        background: var(--inp);
+        border: 1.5px solid var(--bsoft);
+        border-radius: var(--r);
+        padding: 13px 14px;
+        font-size: max(16px, 1em);
+        font-family: "Nunito", sans-serif;
+        color: var(--text);
+        outline: none;
+        width: 100%;
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s,
+          background 0.2s;
+      }
+
+      input::placeholder {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      input:focus,
+      select:focus {
+        border-color: var(--gold);
+        background: #20203a;
+        box-shadow: 0 0 0 3px rgba(232, 184, 75, 0.11);
+      }
+
+      input:valid:not(:placeholder-shown) {
+        border-color: rgba(62, 207, 142, 0.45);
+      }
+      input.error {
+        border-color: var(--red) !important;
+        box-shadow: 0 0 0 3px rgba(224, 85, 85, 0.1) !important;
+      }
+
+      .field-error {
+        font-size: 11px;
+        color: var(--red);
+        display: none;
+        margin-top: -2px;
+      }
+      .field-error.show {
+        display: block;
+      }
+
+      select {
+        appearance: none;
+        -webkit-appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7' fill='%236A6680'%3E%3Cpath d='M0 0l5 7 5-7z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 14px center;
+        padding-right: 34px;
+        cursor: pointer;
+      }
+      select option {
+        background: #161625;
+      }
+
+      /* BOUTON */
+      .btn-submit {
+        margin-top: 18px;
+        width: 100%;
+        background: linear-gradient(135deg, var(--gold) 0%, var(--gold-2) 100%);
+        color: #07070e;
+        border: none;
+        border-radius: var(--r);
+        padding: 17px;
+        font-size: 16px;
+        font-weight: 800;
+        font-family: "Playfair Display", sans-serif;
+        cursor: pointer;
+        letter-spacing: 0.02em;
+        position: relative;
+        overflow: hidden;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s,
+          opacity 0.2s;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+      }
+      .btn-submit::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 60%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+      .btn-submit:hover::after {
+        left: 150%;
+      }
+      .btn-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 36px rgba(232, 184, 75, 0.45);
+      }
+      .btn-submit:active {
+        transform: scale(0.98);
+      }
+      .btn-submit:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
+      }
+
+      .spinner {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border: 2px solid rgba(7, 7, 14, 0.3);
+        border-top-color: #07070e;
+        border-radius: 50%;
+        animation: spin 0.65s linear infinite;
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .form-note {
+        text-align: center;
+        margin-top: 11px;
+        font-size: 11px;
+        color: var(--muted);
+      }
+
+      /* SUCCESS */
+      .success-view {
+        display: none;
+        padding: 52px 24px;
+        text-align: center;
+        animation: fadeUp 0.5s ease both;
+      }
+      .success-icon {
+        width: 68px;
+        height: 68px;
+        background: rgba(62, 207, 142, 0.12);
+        border: 2px solid rgba(62, 207, 142, 0.35);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        margin: 0 auto 20px;
+      }
+      .success-title {
+        font-family: "Syne", sans-serif;
+        font-size: 24px;
+        font-weight: 800;
+        color: var(--green);
+        margin-bottom: 10px;
+      }
+      .success-desc {
+        font-size: 14px;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      /* TRUST BAR */
+      .trust-bar {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px 18px;
+        padding: 20px 20px 14px;
+        border-top: 1px solid var(--bsoft);
+        margin-top: 36px;
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .trust-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+
+      /* ANIMATIONS */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(14px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .a1 {
+        animation: fadeUp 0.5s 0.05s ease both;
+      }
+      .a2 {
+        animation: fadeUp 0.5s 0.15s ease both;
+      }
+      .a3 {
+        animation: fadeUp 0.5s 0.25s ease both;
+      }
+      .a4 {
+        animation: fadeUp 0.5s 0.1s ease both;
+      }
+
+      /* TOAST */
+      .toast {
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%) translateY(80px);
+        background: var(--card-2);
+        border: 1px solid var(--border);
+        border-radius: var(--r2);
+        padding: 13px 22px;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+        transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        z-index: 999;
+        white-space: nowrap;
+      }
+      .toast.show {
+        transform: translateX(-50%) translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="logo.png" alt="Aura DZ" />
+        <div class="logo-name">Aura <span>DZ</span></div>
+      </div>
+      <div class="hdr-right">
+        <!-- ============================================================
+         👉 MODIFIE LE NOMBRE DE COMMANDES ICI (social proof)
+    ============================================================ -->
+        <div class="hdr-orders">247 commandes</div>
+        <div class="hdr-secure">🔒 HTTPS</div>
+      </div>
+    </header>
+
+    <div class="wrap">
+      <!-- PRODUIT -->
+      <div class="product-col">
+        <div class="img-wrap a1">
+          <!-- ============================================================
+           👉 PHOTO — remplace le src par ton image
+      ============================================================ -->
+          <img
+            id="productImg"
+            src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=900&q=85"
+            alt="Huile d'Olive Extra Vierge de Kabylie"
+            loading="eager"
+          />
+          <div class="img-overlay">
+            <div class="badge-premium">⭐ Produit Algérien</div>
+            <div class="badge-live">En stock</div>
+          </div>
+        </div>
+
+        <div class="product-info a2">
+          <div class="eyebrow">Huile artisanale premium</div>
+
+          <!-- ============================================================
+           👉 NOM DU PRODUIT
+      ============================================================ -->
+          <h1>Huile d'Olive<br /><em>Extra Vierge</em><br />de Kabylie</h1>
+
+          <!-- ============================================================
+           👉 DESCRIPTION
+      ============================================================ -->
+          <p class="desc">
+            Récoltée à la main dans les oliveraies ancestrales de Kabylie,
+            pressée à froid pour préserver tous ses arômes et bienfaits. Un
+            produit 100% algérien — authentique et pur.
+          </p>
+
+          <!-- ============================================================
+           👉 CARACTÉRISTIQUES
+      ============================================================ -->
+          <div class="pills">
+            <div class="pill">🫒 Pressée à froid</div>
+            <div class="pill">✅ 100% Naturelle</div>
+            <div class="pill">🚚 Livraison 48h</div>
+            <div class="pill">🏡 Produit local</div>
+          </div>
+
+          <div class="reviews">
+            <div class="stars">★★★★★</div>
+            <div class="reviews-txt">
+              <strong>4.9/5</strong> — Plus de 200 clients satisfaits
+            </div>
+          </div>
+        </div>
+
+        <div class="urgency a3">
+          <span class="urgency-icon">🔥</span>
+          <span>Offre limitée — Stock disponible aujourd'hui seulement !</span>
+        </div>
+      </div>
+
+      <!-- FORMULAIRE -->
+      <div class="form-col a4">
+        <div class="form-card">
+          <div id="formView">
+            <div class="form-inner">
+              <div class="section-label">Choisissez votre offre</div>
+
+              <!-- PACKS -->
+              <!-- ============================================================
+               👉 PRIX — modifie dans const PACKS dans le <script>
+          ============================================================ -->
+              <div class="packs-grid" id="packsGrid">
+                <div class="pack-card selected" data-pack="solo">
+                  <div class="pack-qty">1</div>
+                  <div class="pack-unit">article</div>
+                  <div class="pack-old" id="old-solo"></div>
+                  <div class="pack-price" id="price-solo"></div>
+                  <div class="pack-save" id="save-solo">&nbsp;</div>
+                </div>
+
+                <div class="pack-card popular" data-pack="duo">
+                  <div class="pack-tag blue">⚡ Populaire</div>
+                  <div class="pack-qty">2</div>
+                  <div class="pack-unit">articles</div>
+                  <div class="pack-old" id="old-duo"></div>
+                  <div class="pack-price" id="price-duo"></div>
+                  <div class="pack-save" id="save-duo"></div>
+                </div>
+
+                <div class="pack-card" data-pack="trio">
+                  <div class="pack-tag green">🏆 Meilleur prix</div>
+                  <div class="pack-qty">3</div>
+                  <div class="pack-unit">articles</div>
+                  <div class="pack-old" id="old-trio"></div>
+                  <div class="pack-price" id="price-trio"></div>
+                  <div class="pack-save" id="save-trio"></div>
+                </div>
+              </div>
+
+              <!-- RÉCAP -->
+              <div class="recap">
+                <div class="recap-left">
+                  Commande : <span id="recapLabel">1 article</span>
+                </div>
+                <div class="recap-right">
+                  <div class="recap-total" id="recapTotal"></div>
+                  <div class="recap-saving" id="recapSaving"></div>
+                </div>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="section-label">Vos coordonnées</div>
+
+              <form id="orderForm" novalidate>
+                <div class="fields">
+                  <div class="row-2">
+                    <div class="field">
+                      <label for="nom">Nom</label>
+                      <input
+                        type="text"
+                        id="nom"
+                        name="nom"
+                        placeholder="Votre nom"
+                        autocomplete="family-name"
+                        required
+                        minlength="2"
+                        maxlength="50"
+                      />
+                      <span class="field-error" id="nomError"
+                        >Nom invalide</span
+                      >
+                    </div>
+                    <div class="field">
+                      <label for="prenom">Prénom</label>
+                      <input
+                        type="text"
+                        id="prenom"
+                        name="prenom"
+                        placeholder="Votre prénom"
+                        autocomplete="given-name"
+                        required
+                        minlength="2"
+                        maxlength="50"
+                      />
+                      <span class="field-error" id="prenomError"
+                        >Prénom invalide</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <label for="telephone">Téléphone</label>
+                    <input
+                      type="tel"
+                      id="telephone"
+                      name="telephone"
+                      placeholder="05 XX XX XX XX"
+                      autocomplete="tel"
+                      required
+                      pattern="^(05|06|07)[0-9]{8}$"
+                      maxlength="10"
+                      inputmode="numeric"
+                    />
+                    <span class="field-error" id="telError"
+                      >Numéro algérien invalide (05/06/07…)</span
+                    >
+                  </div>
+
+                  <div class="field">
+                    <label for="wilaya">Wilaya</label>
+                    <select id="wilaya" name="wilaya" required>
+                      <option value="" disabled selected>
+                        Choisir votre wilaya
+                      </option>
+                      <option value="Adrar">01 — Adrar</option>
+                      <option value="Chlef">02 — Chlef</option>
+                      <option value="Laghouat">03 — Laghouat</option>
+                      <option value="Oum El Bouaghi">
+                        04 — Oum El Bouaghi
+                      </option>
+                      <option value="Batna">05 — Batna</option>
+                      <option value="Béjaïa">06 — Béjaïa</option>
+                      <option value="Biskra">07 — Biskra</option>
+                      <option value="Béchar">08 — Béchar</option>
+                      <option value="Blida">09 — Blida</option>
+                      <option value="Bouira">10 — Bouira</option>
+                      <option value="Tamanrasset">11 — Tamanrasset</option>
+                      <option value="Tébessa">12 — Tébessa</option>
+                      <option value="Tlemcen">13 — Tlemcen</option>
+                      <option value="Tiaret">14 — Tiaret</option>
+                      <option value="Tizi Ouzou">15 — Tizi Ouzou</option>
+                      <option value="Alger">16 — Alger</option>
+                      <option value="Djelfa">17 — Djelfa</option>
+                      <option value="Jijel">18 — Jijel</option>
+                      <option value="Sétif">19 — Sétif</option>
+                      <option value="Saïda">20 — Saïda</option>
+                      <option value="Skikda">21 — Skikda</option>
+                      <option value="Sidi Bel Abbès">
+                        22 — Sidi Bel Abbès
+                      </option>
+                      <option value="Annaba">23 — Annaba</option>
+                      <option value="Guelma">24 — Guelma</option>
+                      <option value="Constantine">25 — Constantine</option>
+                      <option value="Médéa">26 — Médéa</option>
+                      <option value="Mostaganem">27 — Mostaganem</option>
+                      <option value="M'Sila">28 — M'Sila</option>
+                      <option value="Mascara">29 — Mascara</option>
+                      <option value="Ouargla">30 — Ouargla</option>
+                      <option value="Oran">31 — Oran</option>
+                      <option value="El Bayadh">32 — El Bayadh</option>
+                      <option value="Illizi">33 — Illizi</option>
+                      <option value="Bordj Bou Arréridj">
+                        34 — Bordj Bou Arréridj
+                      </option>
+                      <option value="Boumerdès">35 — Boumerdès</option>
+                      <option value="El Tarf">36 — El Tarf</option>
+                      <option value="Tindouf">37 — Tindouf</option>
+                      <option value="Tissemsilt">38 — Tissemsilt</option>
+                      <option value="El Oued">39 — El Oued</option>
+                      <option value="Khenchela">40 — Khenchela</option>
+                      <option value="Souk Ahras">41 — Souk Ahras</option>
+                      <option value="Tipaza">42 — Tipaza</option>
+                      <option value="Mila">43 — Mila</option>
+                      <option value="Aïn Defla">44 — Aïn Defla</option>
+                      <option value="Naâma">45 — Naâma</option>
+                      <option value="Aïn Témouchent">
+                        46 — Aïn Témouchent
+                      </option>
+                      <option value="Ghardaïa">47 — Ghardaïa</option>
+                      <option value="Relizane">48 — Relizane</option>
+                      <option value="Timimoun">49 — Timimoun</option>
+                      <option value="Bordj Badji Mokhtar">
+                        50 — Bordj Badji Mokhtar
+                      </option>
+                      <option value="Ouled Djellal">51 — Ouled Djellal</option>
+                      <option value="Béni Abbès">52 — Béni Abbès</option>
+                      <option value="In Salah">53 — In Salah</option>
+                      <option value="In Guezzam">54 — In Guezzam</option>
+                      <option value="Touggourt">55 — Touggourt</option>
+                      <option value="Djanet">56 — Djanet</option>
+                      <option value="El M'Ghair">57 — El M'Ghair</option>
+                      <option value="El Meniaa">58 — El Meniaa</option>
+                    </select>
+                    <span class="field-error" id="wilayaError"
+                      >Veuillez choisir une wilaya</span
+                    >
+                  </div>
+
+                  <div class="field">
+                    <label for="commune">Commune</label>
+                    <input
+                      type="text"
+                      id="commune"
+                      name="commune"
+                      placeholder="Votre commune"
+                      autocomplete="address-level2"
+                      required
+                      minlength="2"
+                      maxlength="60"
+                    />
+                    <span class="field-error" id="communeError"
+                      >Commune invalide</span
+                    >
+                  </div>
+                </div>
+
+                <button type="submit" class="btn-submit" id="submitBtn">
+                  ✅ &nbsp;Valider ma commande
+                </button>
+                <div class="form-note">
+                  🔒 Paiement à la livraison — Données protégées
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="success-view" id="successView">
+            <div class="success-icon">✅</div>
+            <div class="success-title">Commande confirmée !</div>
+            <p class="success-desc">
+              Merci pour votre commande.<br />Notre équipe vous contactera très
+              prochainement. 🎉
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="trust-bar">
+      <div class="trust-item">🔒 Paiement à la livraison</div>
+      <div class="trust-item">🚚 Livraison dans toute l'Algérie</div>
+      <div class="trust-item">↩️ Retour facile</div>
+      <div class="trust-item">⭐ Qualité garantie</div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+      // ============================================================
+      // 👉 URL APPS SCRIPT — colle ici après configuration Google
+      // ============================================================
+      const APPS_SCRIPT_URL = "COLLE_ICI_L_URL_DE_TON_APPS_SCRIPT";
+
+      // ============================================================
+      // 👉 MODIFIE TES PRIX ICI
+      //    priceUnit = prix unitaire de base (affiché barré)
+      //    price     = prix final du pack
+      //    qty       = nombre d'articles
+      // ============================================================
+      const PACKS = {
+        solo: {
+          qty: 1,
+          priceUnit: 1400,
+          price: 1200,
+          label: "1 article sélectionné",
+        },
+        duo: {
+          qty: 2,
+          priceUnit: 1400,
+          price: 2100,
+          label: "2 articles sélectionnés",
+        },
+        trio: {
+          qty: 3,
+          priceUnit: 1400,
+          price: 2800,
+          label: "3 articles sélectionnés",
+        },
+      };
+
+      const fmt = (n) => n.toLocaleString("fr-DZ") + " DA";
+
+      Object.entries(PACKS).forEach(([key, p]) => {
+        const full = p.priceUnit * p.qty;
+        const save = full - p.price;
+        document.getElementById("old-" + key).textContent =
+          save > 0 ? fmt(full) : "";
+        document.getElementById("price-" + key).textContent = fmt(p.price);
+        document.getElementById("save-" + key).textContent =
+          save > 0 ? "−" + fmt(save) : "";
+      });
+
+      let selectedPack = "solo";
+
+      function updateRecap(key) {
+        const p = PACKS[key];
+        const save = p.priceUnit * p.qty - p.price;
+        document.getElementById("recapLabel").textContent = p.label;
+        document.getElementById("recapTotal").textContent = fmt(p.price);
+        document.getElementById("recapSaving").textContent =
+          save > 0 ? "🎉 Économie : " + fmt(save) : "";
+      }
+
+      updateRecap("solo");
+
+      document
+        .getElementById("packsGrid")
+        .addEventListener("click", function (e) {
+          const card = e.target.closest(".pack-card");
+          if (!card) return;
+          selectedPack = card.dataset.pack;
+          document
+            .querySelectorAll(".pack-card")
+            .forEach((c) => c.classList.remove("selected"));
+          card.classList.add("selected");
+          updateRecap(selectedPack);
+        });
+
+      // SÉCURITÉ
+      function checkRateLimit() {
+        const now = Date.now(),
+          key = "fs_rl",
+          w = 600000,
+          lim = 3;
+        let a = [];
+        try {
+          a = JSON.parse(sessionStorage.getItem(key) || "[]");
+        } catch (e) {}
+        a = a.filter((t) => now - t < w);
+        if (a.length >= lim) return false;
+        a.push(now);
+        try {
+          sessionStorage.setItem(key, JSON.stringify(a));
+        } catch (e) {}
+        return true;
+      }
+
+      function sanitize(s) {
+        return String(s)
+          .trim()
+          .replace(/[<>"'`]/g, "")
+          .substring(0, 200);
+      }
+
+      const hp = document.createElement("input");
+      Object.assign(hp, {
+        type: "text",
+        name: "website",
+        id: "website",
+        tabIndex: -1,
+        autocomplete: "off",
+      });
+      hp.style.cssText =
+        "position:absolute;left:-9999px;opacity:0;height:0;width:0;";
+      document.getElementById("orderForm").appendChild(hp);
+
+      const vPhone = (v) => /^(05|06|07)[0-9]{8}$/.test(v.replace(/\s/g, ""));
+      const vText = (v, n = 2) => v.trim().length >= n;
+
+      function showErr(fId, eId, show) {
+        document.getElementById(fId)?.classList.toggle("error", show);
+        document.getElementById(eId)?.classList.toggle("show", show);
+        return !show;
+      }
+
+      function validateAll() {
+        const nom = document.getElementById("nom").value,
+          prenom = document.getElementById("prenom").value,
+          tel = document.getElementById("telephone").value.replace(/\s/g, ""),
+          wilaya = document.getElementById("wilaya").value,
+          commune = document.getElementById("commune").value;
+        let ok = true;
+        ok = showErr("nom", "nomError", !vText(nom)) && ok;
+        ok = showErr("prenom", "prenomError", !vText(prenom)) && ok;
+        ok = showErr("telephone", "telError", !vPhone(tel)) && ok;
+        ok = showErr("wilaya", "wilayaError", !wilaya) && ok;
+        ok = showErr("commune", "communeError", !vText(commune)) && ok;
+        return ok;
+      }
+
+      ["nom", "prenom", "telephone", "commune"].forEach((id) => {
+        document.getElementById(id)?.addEventListener("input", function () {
+          this.classList.remove("error");
+          document.getElementById(id + "Error")?.classList.remove("show");
+        });
+      });
+
+      function showToast(msg, dur = 3500) {
+        const t = document.getElementById("toast");
+        t.textContent = msg;
+        t.classList.add("show");
+        setTimeout(() => t.classList.remove("show"), dur);
+      }
+
+      document
+        .getElementById("orderForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+          if (document.getElementById("website").value) return;
+          if (!checkRateLimit()) {
+            showToast("⚠️ Trop de tentatives. Réessayez plus tard.");
+            return;
+          }
+          if (!validateAll()) {
+            showToast("⚠️ Veuillez corriger les champs en rouge.");
+            return;
+          }
+
+          const btn = document.getElementById("submitBtn");
+          btn.disabled = true;
+          btn.innerHTML = '<span class="spinner"></span> Envoi en cours...';
+
+          const pack = PACKS[selectedPack];
+
+          const payload = {
+            nom: sanitize(document.getElementById("nom").value),
+            prenom: sanitize(document.getElementById("prenom").value),
+            telephone: sanitize(
+              document.getElementById("telephone").value.replace(/\s/g, ""),
+            ),
+            wilaya: sanitize(document.getElementById("wilaya").value),
+            commune: sanitize(document.getElementById("commune").value),
+            pack: selectedPack.toUpperCase(),
+            quantite: pack.qty,
+            // ============================================================
+            // 👉 NOM PRODUIT DANS GOOGLE SHEETS — modifie si besoin
+            // ============================================================
+            produit: "Huile d'Olive Extra Vierge de Kabylie",
+            prix: pack.price,
+            date: new Date().toLocaleString("fr-DZ", {
+              timeZone: "Africa/Algiers",
+            }),
+            _token: btoa(Date.now().toString()),
+          };
+
+          try {
+            await fetch(APPS_SCRIPT_URL, {
+              method: "POST",
+              mode: "no-cors",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload),
+            });
+
+            if (typeof fbq !== "undefined") {
+              fbq("track", "Purchase", {
+                currency: "DZD",
+                value: pack.price,
+                num_items: pack.qty,
+              });
+            }
+
+            document.getElementById("formView").style.display = "none";
+            document.getElementById("successView").style.display = "block";
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          } catch (err) {
+            btn.disabled = false;
+            btn.innerHTML = "✅ &nbsp;Valider ma commande";
+            showToast(
+              "❌ Erreur réseau. Vérifiez votre connexion et réessayez.",
+            );
+          }
+        });
+      //here apps script
+      const SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbzbr_EdBj-V_C1pbSoRxRPxzTXwa3RUYm4KA6oOzDBA3GlNpUz1K7gfdeI0dbcFIevy/exec";
+
+      document
+        .getElementById("orderForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const btn = e.target.querySelector("button");
+          btn.disabled = true;
+          btn.innerHTML = "Envoi en cours...";
+
+          const payload = {
+            nom: document.getElementById("nom").value,
+            prenom: document.getElementById("prenom").value,
+            wilaya: document.getElementById("wilaya").value,
+            commune: document.getElementById("commune").value,
+            telephone: document.getElementById("telephone").value,
+            pack: document.querySelector(".pack-card.selected").dataset.pack,
+            total: document.getElementById("recapTotal").innerText,
+          };
+
+          fetch(SCRIPT_URL, {
+            method: "POST",
+            mode: "no-cors",
+            body: JSON.stringify(payload),
+          })
+            .then(() => {
+              // Succès : Redirection ou message
+              document.getElementById("formView").style.display = "none";
+              document.getElementById("successView").style.display = "block";
+              // Pixel Facebook : Achat
+              if (typeof fbq !== "undefined")
+                fbq("track", "Purchase", { value: 0, currency: "DZD" });
+            })
+            .catch((err) => alert("Erreur, réessaie !"));
+        });
+    </script>
+  </body>
+</html>
