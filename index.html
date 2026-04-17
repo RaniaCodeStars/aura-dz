@@ -69,22 +69,23 @@
 
     <style>
       :root {
-        --gold: #e8b84b;
-        --gold-2: #f7d070;
-        --gold-dim: rgba(232, 184, 75, 0.12);
-        --blue: #4e7cff;
-        --blue-2: #6b9fff;
-        --green: #3ecf8e;
-        --red: #e05555;
-        --dark: #07070e;
-        --card: #0f0f1a;
-        --card-2: #161625;
-        --card-3: #1c1c2e;
-        --inp: #1a1a2c;
-        --border: rgba(232, 184, 75, 0.18);
-        --bsoft: rgba(255, 255, 255, 0.07);
-        --text: #f0ede8;
-        --muted: #6a6680;
+        --gold: #c8860a;
+        --gold-2: #f0a824;
+        --gold-bg: #fff8e8;
+        --gold-b: rgba(200, 134, 10, 0.22);
+        --blue: #3b6fe8;
+        --blue-bg: #eef3ff;
+        --green: #16a34a;
+        --green-bg: #f0fdf4;
+        --green-b: rgba(22, 163, 74, 0.22);
+        --red: #dc2626;
+        --bg: #f9f8f5;
+        --bg2: #ffffff;
+        --bg3: #f2f0eb;
+        --border: #e4e1d8;
+        --text: #090808;
+        --text2: #1a1a18;
+        --muted: #2d2d2d;
         --r: 12px;
         --r2: 18px;
         --r3: 24px;
@@ -102,7 +103,7 @@
       }
 
       body {
-        background: var(--dark);
+        background: var(--bg);
         color: var(--text);
         font-family: "Nunito", sans-serif;
         min-height: 100vh;
@@ -134,10 +135,10 @@
         position: sticky;
         top: 0;
         z-index: 100;
-        background: rgba(7, 7, 14, 0.92);
+        background: rgba(249, 248, 245, 0.96);
         backdrop-filter: blur(24px);
         -webkit-backdrop-filter: blur(24px);
-        border-bottom: 1px solid var(--bsoft);
+        border-bottom: 1px solid var(--border);
         padding: 10px 18px;
         display: flex;
         align-items: center;
@@ -162,10 +163,10 @@
         font-family: "Syne", sans-serif;
         font-size: 17px;
         font-weight: 800;
-        color: #fff;
+        color: #000000;
       }
       .logo-name span {
-        color: var(--blue-2);
+        color: var(--blue);
       }
 
       .hdr-right {
@@ -177,8 +178,8 @@
         display: flex;
         align-items: center;
         gap: 6px;
-        background: rgba(62, 207, 142, 0.1);
-        border: 1px solid rgba(62, 207, 142, 0.2);
+        background: var(--green-bg);
+        border: 1px solid var(--green-b);
         border-radius: 100px;
         padding: 4px 10px;
         font-size: 11px;
@@ -242,7 +243,7 @@
         width: 100%;
         aspect-ratio: 1/1;
         overflow: hidden;
-        background: var(--card);
+        background: var(--bg2);
       }
 
       @media (min-width: 960px) {
@@ -382,7 +383,7 @@
         margin-bottom: 18px;
       }
       .pill {
-        background: var(--card-2);
+        background: var(--bg);
         border: 1px solid var(--bsoft);
         border-radius: 100px;
         padding: 5px 12px;
@@ -398,7 +399,7 @@
         align-items: center;
         gap: 10px;
         padding: 12px 16px;
-        background: var(--card-2);
+        background: var(--bg);
         border: 1px solid var(--bsoft);
         border-radius: var(--r2);
       }
@@ -463,7 +464,7 @@
       }
 
       .form-card {
-        background: var(--card);
+        background: var(--bg2);
         border: 1px solid var(--border);
         border-radius: var(--r3);
         overflow: hidden;
@@ -520,7 +521,7 @@
 
       .pack-card {
         position: relative;
-        background: var(--card-2);
+        background: var(--bg);
         border: 2px solid var(--bsoft);
         border-radius: var(--r2);
         padding: 18px 6px 14px;
@@ -555,7 +556,7 @@
 
       .pack-card.selected {
         border-color: var(--gold);
-        background: var(--card-3);
+        background: var(--bg3);
         box-shadow:
           0 0 0 3px rgba(232, 184, 75, 0.14),
           0 8px 24px rgba(0, 0, 0, 0.4);
@@ -631,7 +632,7 @@
         margin-bottom: 6px;
       }
       .pack-card.popular .pack-price {
-        color: var(--blue-2);
+        color: var(--blue);
       }
 
       .pack-save {
@@ -647,7 +648,7 @@
 
       /* RÉCAP */
       .recap {
-        background: var(--card-3);
+        background: var(--bg3);
         border: 1px solid var(--bsoft);
         border-radius: var(--r);
         padding: 13px 16px;
@@ -716,7 +717,7 @@
 
       input,
       select {
-        background: var(--inp);
+        background: var(--bg);
         border: 1.5px solid var(--bsoft);
         border-radius: var(--r);
         padding: 13px 14px;
@@ -739,7 +740,7 @@
       input:focus,
       select:focus {
         border-color: var(--gold);
-        background: #20203a;
+        background: var(--gold-bg);
         box-shadow: 0 0 0 3px rgba(232, 184, 75, 0.11);
       }
 
@@ -771,7 +772,7 @@
         cursor: pointer;
       }
       select option {
-        background: #161625;
+        background: #ffffff;
       }
 
       /* BOUTON */
@@ -939,7 +940,7 @@
         bottom: 24px;
         left: 50%;
         transform: translateX(-50%) translateY(80px);
-        background: var(--card-2);
+        background: var(--bg);
         border: 1px solid var(--border);
         border-radius: var(--r2);
         padding: 13px 22px;
@@ -954,6 +955,261 @@
       .toast.show {
         transform: translateX(-50%) translateY(0);
       }
+
+      /* ══ CAROUSEL ══ */
+      .carousel-wrap {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1/1;
+        overflow: hidden;
+        background: var(--bg3);
+        touch-action: pan-y;
+      }
+      @media (min-width: 960px) {
+        .carousel-wrap {
+          border-radius: var(--r3);
+          border: 1px solid var(--border);
+        }
+      }
+      .carousel-track {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+      .carousel-slide {
+        min-width: 100%;
+        height: 100%;
+        position: relative;
+        flex-shrink: 0;
+      }
+      .carousel-slide img,
+      .carousel-slide video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .carousel-wrap::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(
+          to bottom,
+          transparent 55%,
+          rgba(249, 248, 245, 0.4) 100%
+        );
+        z-index: 1;
+      }
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 4;
+        width: 36px;
+        height: 36px;
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        color: var(--text2);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.2s;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .carousel-btn:hover {
+        background: var(--gold-bg);
+        border-color: var(--gold-b);
+      }
+      .carousel-btn.prev {
+        left: 10px;
+      }
+      .carousel-btn.next {
+        right: 10px;
+      }
+      .carousel-dots {
+        position: absolute;
+        bottom: 46px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 4;
+        display: flex;
+        gap: 5px;
+      }
+      .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .dot.active {
+        width: 18px;
+        border-radius: 3px;
+        background: white;
+      }
+
+      /* ══ LIVRAISON ══ */
+      .delivery-section {
+        display: none;
+        margin-top: 4px;
+        animation: fadeUp 0.3s ease both;
+      }
+      .delivery-section.show {
+        display: block;
+      }
+      .delivery-options {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .delivery-option {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 13px 16px;
+        background: var(--bg);
+        border: 2px solid var(--border);
+        border-radius: var(--r);
+        cursor: pointer;
+        transition: all 0.2s;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .delivery-option:hover {
+        border-color: var(--gold-b);
+        background: var(--gold-bg);
+      }
+      .delivery-option.selected {
+        border-color: var(--gold);
+        background: var(--gold-bg);
+        box-shadow: 0 0 0 3px rgba(200, 134, 10, 0.09);
+      }
+      .delivery-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .delivery-radio {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 2px solid var(--border);
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: border-color 0.2s;
+        position: relative;
+      }
+      .delivery-option.selected .delivery-radio {
+        border-color: var(--gold);
+      }
+      .delivery-radio::after {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--gold);
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+      .delivery-option.selected .delivery-radio::after {
+        opacity: 1;
+      }
+      .delivery-info {
+        display: flex;
+        flex-direction: column;
+      }
+      .delivery-name {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--text);
+      }
+      .delivery-desc {
+        font-size: 11px;
+        color: var(--muted);
+        margin-top: 1px;
+      }
+      .delivery-price {
+        font-family: "Syne", sans-serif;
+        font-size: 14px;
+        font-weight: 800;
+        color: var(--gold);
+        white-space: nowrap;
+      }
+      .delivery-error {
+        font-size: 11px;
+        color: var(--red);
+        display: none;
+        margin-top: 4px;
+      }
+      .delivery-error.show {
+        display: block;
+      }
+
+      /* ══ RECAP FINAL ══ */
+      .final-recap {
+        display: none;
+        background: linear-gradient(135deg, var(--gold-bg), #fff5d5);
+        border: 2px solid var(--gold-b);
+        border-radius: var(--r2);
+        padding: 16px 18px;
+        margin-top: 16px;
+        animation: fadeUp 0.3s ease both;
+      }
+      .final-recap.show {
+        display: block;
+      }
+      .final-recap-title {
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 12px;
+      }
+      .final-line {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 13px;
+        color: var(--text2);
+        margin-bottom: 8px;
+      }
+      .final-line.total {
+        border-top: 1px solid var(--gold-b);
+        padding-top: 10px;
+        margin-top: 4px;
+        margin-bottom: 0;
+      }
+      .final-line.total .final-label {
+        font-weight: 800;
+        color: var(--text);
+        font-size: 14px;
+      }
+      .final-line.total .final-val {
+        font-family: "Syne", sans-serif;
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--gold);
+      }
+      .final-label {
+        font-weight: 600;
+      }
+      .final-val {
+        font-weight: 700;
+        color: var(--text);
+      }
     </style>
   </head>
   <body>
@@ -966,54 +1222,66 @@
         <!-- ============================================================
          👉 MODIFIE LE NOMBRE DE COMMANDES ICI (social proof)
     ============================================================ -->
-        <div class="hdr-orders">247 commandes</div>
-        <div class="hdr-secure">🔒 HTTPS</div>
+        <div class="hdr-orders">+ 2k commandes</div>
+        <div class="hdr-secure">🔒</div>
       </div>
     </header>
 
     <div class="wrap">
       <!-- PRODUIT -->
       <div class="product-col">
-        <div class="img-wrap a1">
-          <!-- ============================================================
-           👉 PHOTO — remplace le src par ton image
-      ============================================================ -->
-          <img
-            id="productImg"
-            src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=900&q=85"
-            alt="Huile d'Olive Extra Vierge de Kabylie"
-            loading="eager"
-          />
+        <!-- CAROUSEL -->
+        <div class="carousel-wrap a1" id="carouselWrap">
+          <div class="carousel-track" id="carouselTrack">
+            <!-- ============================================================
+                 CAROUSEL SLIDES — ajoute/modifie tes images et vidéos ici
+                 Image : <div class="carousel-slide"><img src="photo.jpg"/></div>
+                 Vidéo : <div class="carousel-slide"><video src="video.mp4" autoplay muted loop playsinline></video></div>
+            ============================================================ -->
+            <div class="carousel-slide">
+              <img src="./namouss.png" alt="Photo 1" />
+            </div>
+            <div class="carousel-slide">
+              <!-- 👉 Remplace par ta 2ème image -->
+              <img src="./namouss2.png" alt="Photo 2" />
+            </div>
+            <div class="carousel-slide">
+              <!-- 👉 Remplace par ta 3ème image ou vidéo -->
+              <img src="./namouss3.png" alt="Photo 3" />
+            </div>
+          </div>
           <div class="img-overlay">
             <div class="badge-premium">⭐ Produit Algérien</div>
             <div class="badge-live">En stock</div>
           </div>
+          <button class="carousel-btn prev" id="prevBtn">&#8249;</button>
+          <button class="carousel-btn next" id="nextBtn">&#8250;</button>
+          <div class="carousel-dots" id="carouselDots"></div>
         </div>
 
         <div class="product-info a2">
-          <div class="eyebrow">Huile artisanale premium</div>
+          <div class="eyebrow">جهاز قتل الحشرات</div>
 
           <!-- ============================================================
            👉 NOM DU PRODUIT
       ============================================================ -->
-          <h1>Huile d'Olive<br /><em>Extra Vierge</em><br />de Kabylie</h1>
+          <h1>جهاز قتل الحشرات<br /><em>Produit</em><br />Original</h1>
 
           <!-- ============================================================
            👉 DESCRIPTION
       ============================================================ -->
           <p class="desc">
-            Récoltée à la main dans les oliveraies ancestrales de Kabylie,
-            pressée à froid pour préserver tous ses arômes et bienfaits. Un
-            produit 100% algérien — authentique et pur.
+            ✔️ يقضي على الحشرات فوراً ✔️ آمن وبدون مواد كيميائية ✔️ صامت ومناسب
+            للنوم 🔥 اطلبه الآن وتهنّى من الإزعاج! 🔥 الحل النهائي للحشرات
+            المزعجة
           </p>
 
           <!-- ============================================================
            👉 CARACTÉRISTIQUES
       ============================================================ -->
           <div class="pills">
-            <div class="pill">🫒 Pressée à froid</div>
-            <div class="pill">✅ 100% Naturelle</div>
-            <div class="pill">🚚 Livraison 48h</div>
+            <div class="pill">✅ Best Seller</div>
+            <div class="pill">🚚 Livraison Rapide</div>
             <div class="pill">🏡 Produit local</div>
           </div>
 
@@ -1220,6 +1488,15 @@
                     >
                   </div>
 
+                  <!-- OPTIONS LIVRAISON — apparaît après sélection wilaya -->
+                  <div class="delivery-section" id="deliverySection">
+                    <label>Mode de livraison</label>
+                    <div class="delivery-options" id="deliveryOptions"></div>
+                    <span class="delivery-error" id="deliveryError"
+                      >Veuillez choisir un mode de livraison</span
+                    >
+                  </div>
+
                   <div class="field">
                     <label for="commune">Commune</label>
                     <input
@@ -1235,6 +1512,25 @@
                     <span class="field-error" id="communeError"
                       >Commune invalide</span
                     >
+                  </div>
+                </div>
+
+                <!-- RECAP FINAL avec prix livraison -->
+                <div class="final-recap" id="finalRecap">
+                  <div class="final-recap-title">
+                    🧾 Récapitulatif de votre commande
+                  </div>
+                  <div class="final-line">
+                    <span class="final-label">Produit</span>
+                    <span class="final-val" id="finalProduit">—</span>
+                  </div>
+                  <div class="final-line">
+                    <span class="final-label">Livraison</span>
+                    <span class="final-val" id="finalLivraison">—</span>
+                  </div>
+                  <div class="final-line total">
+                    <span class="final-label">Total à payer</span>
+                    <span class="final-val" id="finalTotal">—</span>
                   </div>
                 </div>
 
@@ -1273,7 +1569,8 @@
       // ============================================================
       // 👉 URL APPS SCRIPT — colle ici après configuration Google
       // ============================================================
-      const APPS_SCRIPT_URL = "COLLE_ICI_L_URL_DE_TON_APPS_SCRIPT";
+      const APPS_SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbyfgQWiCFONw3-TrNaQmkW_LXOiAHbcss_S5SWNEFuO9c2k0Q1jWIghtwWzZVKEwvP_/exec";
 
       // ============================================================
       // 👉 MODIFIE TES PRIX ICI
@@ -1284,20 +1581,20 @@
       const PACKS = {
         solo: {
           qty: 1,
-          priceUnit: 1400,
-          price: 1200,
+          priceUnit: 1700,
+          price: 1500,
           label: "1 article sélectionné",
         },
         duo: {
           qty: 2,
-          priceUnit: 1400,
-          price: 2100,
+          priceUnit: 1500,
+          price: 2500,
           label: "2 articles sélectionnés",
         },
         trio: {
           qty: 3,
-          priceUnit: 1400,
-          price: 2800,
+          priceUnit: 1500,
+          price: 3500,
           label: "3 articles sélectionnés",
         },
       };
@@ -1399,6 +1696,14 @@
         ok = showErr("telephone", "telError", !vPhone(tel)) && ok;
         ok = showErr("wilaya", "wilayaError", !wilaya) && ok;
         ok = showErr("commune", "communeError", !vText(commune)) && ok;
+        if (
+          wilaya &&
+          typeof selectedDelivery !== "undefined" &&
+          !selectedDelivery
+        ) {
+          document.getElementById("deliveryError")?.classList.add("show");
+          ok = false;
+        }
         return ok;
       }
 
@@ -1436,21 +1741,35 @@
 
           const pack = PACKS[selectedPack];
 
+          const wilayaVal = document.getElementById("wilaya").value;
+          const deliveryPrice =
+            typeof DELIVERY_PRICES !== "undefined" &&
+            DELIVERY_PRICES[wilayaVal] &&
+            selectedDelivery
+              ? DELIVERY_PRICES[wilayaVal][selectedDelivery]
+              : 0;
+          const prixTotal = pack.price + deliveryPrice;
+
           const payload = {
             nom: sanitize(document.getElementById("nom").value),
             prenom: sanitize(document.getElementById("prenom").value),
             telephone: sanitize(
               document.getElementById("telephone").value.replace(/\s/g, ""),
             ),
-            wilaya: sanitize(document.getElementById("wilaya").value),
+            wilaya: sanitize(wilayaVal),
             commune: sanitize(document.getElementById("commune").value),
             pack: selectedPack.toUpperCase(),
             quantite: pack.qty,
-            // ============================================================
-            // 👉 NOM PRODUIT DANS GOOGLE SHEETS — modifie si besoin
-            // ============================================================
             produit: "Huile d'Olive Extra Vierge de Kabylie",
-            prix: pack.price,
+            prix_produit: pack.price,
+            type_livraison:
+              selectedDelivery === "domicile"
+                ? "À domicile"
+                : selectedDelivery === "bureau"
+                  ? "Au bureau"
+                  : "Non spécifié",
+            prix_livraison: deliveryPrice,
+            prix_total: prixTotal,
             date: new Date().toLocaleString("fr-DZ", {
               timeZone: "Africa/Algiers",
             }),
@@ -1468,7 +1787,7 @@
             if (typeof fbq !== "undefined") {
               fbq("track", "Purchase", {
                 currency: "DZD",
-                value: pack.price,
+                value: prixTotal,
                 num_items: pack.qty,
               });
             }
@@ -1484,43 +1803,178 @@
             );
           }
         });
-      //here apps script
-      const SCRIPT_URL =
-        "https://script.google.com/macros/s/AKfycbyfgQWiCFONw3-TrNaQmkW_LXOiAHbcss_S5SWNEFuO9c2k0Q1jWIghtwWzZVKEwvP_/exec";
 
-      document
-        .getElementById("orderForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          const btn = e.target.querySelector("button");
-          btn.disabled = true;
-          btn.innerHTML = "Envoi en cours...";
+      // ============================================================
+      // 👉 PRIX DE LIVRAISON PAR WILAYA — modifie selon tes tarifs
+      // ============================================================
+      const DELIVERY_PRICES = {
+        Alger: { domicile: 400, bureau: 250 },
+        Oran: { domicile: 850, bureau: 450 },
+        Constantine: { domicile: 850, bureau: 450 },
+        Annaba: { domicile: 850, bureau: 450 },
+        Blida: { domicile: 650, bureau: 400 },
+        Boumerdès: { domicile: 650, bureau: 400 },
+        Tipaza: { domicile: 650, bureau: 450 },
+        "Tizi Ouzou": { domicile: 650, bureau: 450 },
+        Béjaïa: { domicile: 850, bureau: 450 },
+        Sétif: { domicile: 850, bureau: 450 },
+        Batna: { domicile: 850, bureau: 450 },
+        Biskra: { domicile: 850, bureau: 650 },
+        Tébessa: { domicile: 850, bureau: 450 },
+        Skikda: { domicile: 850, bureau: 450 },
+        Guelma: { domicile: 850, bureau: 450 },
+        "Souk Ahras": { domicile: 850, bureau: 450 },
+        "El Tarf": { domicile: 850, bureau: 550 },
+        "Oum El Bouaghi": { domicile: 850, bureau: 450 },
+        Khenchela: { domicile: 850, bureau: 450 },
+        Mila: { domicile: 850, bureau: 450 },
+        Jijel: { domicile: 850, bureau: 450 },
+        Médéa: { domicile: 650, bureau: 450 },
+        Bouira: { domicile: 650, bureau: 450 },
+        Tlemcen: { domicile: 850, bureau: 450 },
+        "Sidi Bel Abbès": { domicile: 850, bureau: 450 },
+        "Aïn Témouchent": { domicile: 850, bureau: 450 },
+        Mascara: { domicile: 850, bureau: 450 },
+        Mostaganem: { domicile: 850, bureau: 450 },
+        Relizane: { domicile: 850, bureau: 450 },
+        Tiaret: { domicile: 850, bureau: 450 },
+        "Aïn Defla": { domicile: 650, bureau: 450 },
+        Chlef: { domicile: 700, bureau: 450 },
+        Tissemsilt: { domicile: 850, bureau: 450 },
+        Saïda: { domicile: 850, bureau: 450 },
+        Naâma: { domicile: 950, bureau: 500 },
+        "El Bayadh": { domicile: 850, bureau: 450 },
+        Laghouat: { domicile: 850, bureau: 450 },
+        Djelfa: { domicile: 850, bureau: 450 },
+        "M'Sila": { domicile: 850, bureau: 450 },
+        "Bordj Bou Arréridj": { domicile: 650, bureau: 450 },
+        Ouargla: { domicile: 1000, bureau: 500 },
+        "El Oued": { domicile: 950, bureau: 600 },
+        Ghardaïa: { domicile: 950, bureau: 650 },
+        Adrar: { domicile: 1650, bureau: 850 },
+        Tamanrasset: { domicile: 1800, bureau: 1000 },
+        Illizi: { domicile: 1700, bureau: 850 },
+        Tindouf: { domicile: 1650, bureau: 800 },
+        Béchar: { domicile: 1200, bureau: 650 },
+        Timimoun: { domicile: 1650, bureau: 850 },
+        "Bordj Badji Mokhtar": { domicile: 1600, bureau: 800 },
+        "Ouled Djellal": { domicile: 950, bureau: 450 },
+        "Béni Abbès": { domicile: 1300, bureau: 650 },
+        "In Salah": { domicile: 1650, bureau: 850 },
+        "In Guezzam": { domicile: 1500, bureau: 750 },
+        Touggourt: { domicile: 950, bureau: 500 },
+        Djanet: { domicile: 2000, bureau: 1000 },
+        "El M'Ghair": { domicile: 950, bureau: 500 },
+        "El Meniaa": { domicile: 950, bureau: 500 },
+      };
 
-          const payload = {
-            nom: document.getElementById("nom").value,
-            prenom: document.getElementById("prenom").value,
-            wilaya: document.getElementById("wilaya").value,
-            commune: document.getElementById("commune").value,
-            telephone: document.getElementById("telephone").value,
-            pack: document.querySelector(".pack-card.selected").dataset.pack,
-            total: document.getElementById("recapTotal").innerText,
-          };
+      let selectedDelivery = null;
 
-          fetch(SCRIPT_URL, {
-            method: "POST",
-            mode: "no-cors",
-            body: JSON.stringify(payload),
-          })
-            .then(() => {
-              // Succès : Redirection ou message
-              document.getElementById("formView").style.display = "none";
-              document.getElementById("successView").style.display = "block";
-              // Pixel Facebook : Achat
-              if (typeof fbq !== "undefined")
-                fbq("track", "Purchase", { value: 0, currency: "DZD" });
-            })
-            .catch((err) => alert("Erreur, réessaie !"));
+      function updateFinalRecap() {
+        if (!selectedDelivery) return;
+        const wilaya = document.getElementById("wilaya").value;
+        if (!wilaya || !DELIVERY_PRICES[wilaya]) return;
+        const packPrice = PACKS[selectedPack].price;
+        const deliveryPrice = DELIVERY_PRICES[wilaya][selectedDelivery];
+        const total = packPrice + deliveryPrice;
+        const delivLabel =
+          selectedDelivery === "domicile" ? "🏠 À domicile" : "🏢 Au bureau";
+        document.getElementById("finalProduit").textContent =
+          PACKS[selectedPack].qty + " article(s) — " + fmt(packPrice);
+        document.getElementById("finalLivraison").textContent =
+          delivLabel + " — " + fmt(deliveryPrice);
+        document.getElementById("finalTotal").textContent = fmt(total);
+        document.getElementById("finalRecap").classList.add("show");
+      }
+
+      document.getElementById("wilaya").addEventListener("change", function () {
+        const wilaya = this.value;
+        const prices = DELIVERY_PRICES[wilaya];
+        const section = document.getElementById("deliverySection");
+        const opts = document.getElementById("deliveryOptions");
+        selectedDelivery = null;
+        document.getElementById("finalRecap").classList.remove("show");
+        if (!prices) {
+          section.classList.remove("show");
+          return;
+        }
+        opts.innerHTML = `
+          <div class="delivery-option" data-type="domicile" data-price="${prices.domicile}">
+            <div class="delivery-left">
+              <div class="delivery-radio"></div>
+              <div class="delivery-info">
+                <div class="delivery-name">🏠 Livraison à domicile</div>
+                <div class="delivery-desc">Reçu chez vous sous 24–48h</div>
+              </div>
+            </div>
+            <div class="delivery-price">${fmt(prices.domicile)}</div>
+          </div>
+          <div class="delivery-option" data-type="bureau" data-price="${prices.bureau}">
+            <div class="delivery-left">
+              <div class="delivery-radio"></div>
+              <div class="delivery-info">
+                <div class="delivery-name">🏢 Retrait au bureau</div>
+                <div class="delivery-desc">Point relais / agence proche</div>
+              </div>
+            </div>
+            <div class="delivery-price">${fmt(prices.bureau)}</div>
+          </div>`;
+        section.classList.add("show");
+        opts.querySelectorAll(".delivery-option").forEach((opt) => {
+          opt.addEventListener("click", function () {
+            opts
+              .querySelectorAll(".delivery-option")
+              .forEach((o) => o.classList.remove("selected"));
+            this.classList.add("selected");
+            selectedDelivery = this.dataset.type;
+            document.getElementById("deliveryError").classList.remove("show");
+            updateFinalRecap();
+          });
         });
+      });
+
+      // CAROUSEL
+      const track = document.getElementById("carouselTrack");
+      const slides = track ? track.querySelectorAll(".carousel-slide") : [];
+      const dotsEl = document.getElementById("carouselDots");
+      let current = 0,
+        startX = 0;
+      if (slides.length > 0 && dotsEl) {
+        slides.forEach((_, i) => {
+          const d = document.createElement("div");
+          d.className = "dot" + (i === 0 ? " active" : "");
+          d.addEventListener("click", () => goTo(i));
+          dotsEl.appendChild(d);
+        });
+      }
+      function goTo(n) {
+        if (!track || slides.length === 0) return;
+        current = (n + slides.length) % slides.length;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        if (dotsEl)
+          dotsEl
+            .querySelectorAll(".dot")
+            .forEach((d, i) => d.classList.toggle("active", i === current));
+      }
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      if (prevBtn) prevBtn.addEventListener("click", () => goTo(current - 1));
+      if (nextBtn) nextBtn.addEventListener("click", () => goTo(current + 1));
+      const cWrap = document.getElementById("carouselWrap");
+      if (cWrap) {
+        cWrap.addEventListener(
+          "touchstart",
+          (e) => {
+            startX = e.touches[0].clientX;
+          },
+          { passive: true },
+        );
+        cWrap.addEventListener("touchend", (e) => {
+          const diff = startX - e.changedTouches[0].clientX;
+          if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+        });
+      }
+      if (slides.length > 1) setInterval(() => goTo(current + 1), 4500);
     </script>
   </body>
 </html>
